@@ -4,21 +4,16 @@
 
 (def start-state {:players ["Pigge" "Kalle" "Hobbe"]
                   :zones [:hand :deck :table]
-                  :turn "Pigge"
-                  :whatever []})
-
-(defn next-player-map [players]
-  {"Kalle" "Hobbe"
-   "Hobbe" "Kalle"})
+                  :turn "Pigge"})
 
 (defn switch-player [current-player players]
-  (let [other (next-player-map players)]
+  (let [other (structure/next-player-map players)]
     (other current-player)))
 
 (defn tick [game-state]
   (update-in game-state [:turn] switch-player (:players game-state)))
 
-(def game-states (structure/game-reduce start-state tick 5))
+(def game-states (structure/game-reduce start-state tick 10))
 
 (spit "html/output.html" (data-to-html/convert game-states))
 

@@ -12,3 +12,14 @@
                new-state
                (dec turns-left)))
       result)))
+
+(defn next-player-map [players]
+  "Produces a map from a vector of strings where each string
+   is the key of a value to the next player"
+  (loop [result {}
+         index 0]
+    (if (< index (count players))
+      (let [k (nth players index)
+            v (nth players (mod (inc index) (count players)))]
+        (recur (assoc result k v) (inc index)))
+      result)))
