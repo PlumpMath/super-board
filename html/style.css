@@ -8,14 +8,20 @@ div {
 
 .vector {
   background: #159;
+  min-width: 20px;
+  min-height: 20px;
 }
 
 .map {
   background: #AAB;
+  min-width: 20px;
+  min-height: 20px;
 }
 
 .set {
   background: #575;
+  min-width: 20px;
+  min-height: 20px;
 }
 
 .key {

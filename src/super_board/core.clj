@@ -1,25 +1,24 @@
 (ns super-board.core
-  (require [super-board.data-to-html :as data-to-html]))
+  (require [super-board.data-to-html :as data-to-html]
+           [super-board.structure :as structure]))
 
-(def start-state {:players ["Kalle" "Hobbe"]
+(def start-state {:players ["Pigge" "Kalle" "Hobbe"]
                   :zones [:hand :deck :table]
-                  :turn 0})
+                  :turn "Pigge"
+                  :whatever []})
+
+(defn next-player-map [players]
+  {"Kalle" "Hobbe"
+   "Hobbe" "Kalle"})
+
+(defn switch-player [current-player players]
+  (let [other (next-player-map players)]
+    (other current-player)))
 
 (defn tick [game-state]
-  (update-in game-state [:turn] inc))
+  (update-in game-state [:turn] switch-player (:players game-state)))
 
-(defn game-reduce [start-state step-fn turns]
-  (loop [result []
-         state start-state
-         turns-left turns]
-    (if (pos? turns-left)
-      (let [new-state (step-fn state)]
-        (recur (conj result new-state)
-               new-state
-               (dec turns-left)))
-      result)))
-
-(def game-states (game-reduce start-state tick 5))
+(def game-states (structure/game-reduce start-state tick 5))
 
 (spit "html/output.html" (data-to-html/convert game-states))
 
