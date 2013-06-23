@@ -14,14 +14,14 @@ div {
   background: #AAB;
 }
 
-.type {
-  background: #BBF;
+.set {
+  background: #575;
 }
 
 .key {
   background: #F66;
   margin-right: -7px;
-  clear: both;
+  /*clear: both;*/
 }
 
 .value {
@@ -36,14 +36,14 @@ div {
   clear: both;
 }
 
-.set {
-  background: #575;
-}
-
 .string {
   background: #FFD;
 }
 
 .keyword {
   background: #FAB;
+}
+
+.type {
+  background: #BBF;
 }

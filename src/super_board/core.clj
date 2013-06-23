@@ -19,7 +19,7 @@
                (dec turns-left)))
       result)))
 
-(def game-states (game-reduce start-state tick 3))
+(def game-states (game-reduce start-state tick 5))
 
 (spit "html/output.html" (data-to-html/convert game-states))
 

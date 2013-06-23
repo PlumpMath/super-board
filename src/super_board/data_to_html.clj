@@ -2,11 +2,6 @@
   (require [hiccup.core :as h])
   (require [hiccup.page :as p]))
 
-
-(def struct-1 [{20 100 :name "Erik" :age 26.78 :siblings #{"anna" "jonas" "klara"} :letters (set "abcdefghijklmnopqrstuvwxyz")}
-               {:name "Marie" :age 27 :smart true :cities ["Stockholm" "Gothenburg"]}
-               {:name "Tobbe" :age 32 :instruments [:guitar :drum]}])
-
 (defn visit-vector [index element]
   (list [:div.index (str index)]
         (visit element)))
@@ -27,7 +22,3 @@
   (h/html
    (p/include-css "style.css")
    (p/html5 [:body (visit input)])))
-
-;(spit "html/output.html" (convert struct-1))
-
-
