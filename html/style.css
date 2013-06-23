@@ -7,15 +7,15 @@ div {
 }
 
 .vector {
-  background: #678;
+  background: #159;
 }
 
 .map {
-  background: #AAC;
+  background: #AAB;
 }
 
 .type {
-  background: #CCC;
+  background: #BBF;
 }
 
 .key {
@@ -34,4 +34,16 @@ div {
   background: #DA6;
   margin-right: -7px;
   clear: both;
+}
+
+.set {
+  background: #575;
+}
+
+.string {
+  background: #FFD;
+}
+
+.keyword {
+  background: #FAB;
 }
