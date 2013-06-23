@@ -1,0 +1,37 @@
+div {
+  font-family: sans-serif;
+  float: left;
+  margin: 10px;
+  padding: 5px;
+  box-shadow: 3px 3px 4px #000;
+}
+
+.vector {
+  background: #678;
+}
+
+.map {
+  background: #AAC;
+}
+
+.type {
+  background: #CCC;
+}
+
+.key {
+  background: #F66;
+  margin-right: -7px;
+  clear: both;
+}
+
+.value {
+  background: #644;
+  margin-left: 0px;
+  padding: 0px;
+}
+
+.index {
+  background: #DA6;
+  margin-right: -7px;
+  clear: both;
+}
